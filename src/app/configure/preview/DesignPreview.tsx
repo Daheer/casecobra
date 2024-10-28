@@ -22,6 +22,7 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
   const { id } = configuration
   const { isAuthenticated } = useKindeBrowserClient()
   console.log("USER", isAuthenticated)
+  console.log("EVERYTHING", useKindeBrowserClient())
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false)
 
   const [showConfetti, setShowConfetti] = useState<boolean>(false)
