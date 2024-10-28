@@ -9,6 +9,7 @@ import { Order } from "@prisma/client"
 export const getUser = async () => {
   const { getUser } = getKindeServerSession()
   const user = await getUser()
+  console.log("USEERRR", user)
 
   if (!user) { throw new Error("You need to be logged in")}
 
