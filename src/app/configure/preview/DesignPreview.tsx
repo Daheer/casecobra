@@ -10,7 +10,7 @@ import { useMutation } from "@tanstack/react-query"
 import { ArrowRight, Check } from "lucide-react"
 import { useEffect, useState } from "react"
 import Confetti from "react-dom-confetti"
-import { createCheckoutSession } from "./actions"
+import { createCheckoutSession, getUser } from "./actions"
 import { useRouter } from "next/navigation"
 import { useToast } from "@/components/ui/toaster"
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs"
@@ -20,15 +20,17 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
   const router = useRouter()
   const toast = useToast()
   const { id } = configuration
-  const { isAuthenticated } = useKindeBrowserClient()
-  console.log("USER", isAuthenticated)
+  // const { isAuthenticated } = useKindeBrowserClient()
+  const user = getUser()
+  console.log("USER", user)
   console.log("EVERYTHING", useKindeBrowserClient())
+
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false)
 
   const [showConfetti, setShowConfetti] = useState<boolean>(false)
   useEffect(() => {
     setShowConfetti(true),
-      [isAuthenticated]
+      [user]
   })
 
   const { color, model, finish, material } = configuration
@@ -60,7 +62,7 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
   })
 
   const handleCheckout = () => {
-    if (isAuthenticated) {
+    if (user) {
       createPaymentSession({ configId: id })
     } else {
       localStorage.setItem("configurationId", id)
