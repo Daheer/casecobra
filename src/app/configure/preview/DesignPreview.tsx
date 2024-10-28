@@ -13,7 +13,7 @@ import Confetti from "react-dom-confetti"
 import { createCheckoutSession } from "./actions"
 import { useRouter } from "next/navigation"
 import { useToast } from "@/components/ui/toaster"
-import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs/"
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs"
 import LoginModal from "@/components/LoginModal"
 
 const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
