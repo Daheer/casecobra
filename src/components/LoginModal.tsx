@@ -1,7 +1,7 @@
 import type { Dispatch, SetStateAction } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "./ui/dialog"
 import Image from "next/image"
-import { LoginLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs"
+import { LoginLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components"
 import { buttonVariants } from "./ui/button"
 
 const LoginModal = ({ isOpen, setIsOpen }: {
