@@ -32,6 +32,7 @@ export async function POST(req: Request) {
       }
 
       const billingAddress = session.customer_details!.address
+      console.log("BILLING", billingAddress, session.customer_details!)
       const shippingAddress = session.shipping_details!.address
 
       await db.order.update({
