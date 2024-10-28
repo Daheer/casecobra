@@ -13,15 +13,16 @@ import Confetti from "react-dom-confetti"
 import { createCheckoutSession } from "./actions"
 import { useRouter } from "next/navigation"
 import { useToast } from "@/components/ui/toaster"
-import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs"
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs/"
 import LoginModal from "@/components/LoginModal"
 
 const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
   const router = useRouter()
   const toast = useToast()
   const { id } = configuration
-  const { user } = useKindeBrowserClient()
-  console.log(user)
+  const { user_, getUser } = useKindeBrowserClient()
+  const user = getUser()
+  console.log("USER", user)
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false)
 
   const [showConfetti, setShowConfetti] = useState<boolean>(false)
