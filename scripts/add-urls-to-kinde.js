@@ -66,29 +66,29 @@ async function addCallbackUrlToKinde(token) {
         headers: {
           Authorization: `Bearer ${token}`,
           Accept: "application/json; charset=utf-8",
-          Content- Type: "application/json"
+          "Content-Type": "application/json"
         },
-      body: JSON.stringify({
-        urls: [`https://${process.env.VERCEL_URL}/api/auth/kinde_callback`]
-      })
+        body: JSON.stringify({
+          urls: [`https://${process.env.VERCEL_URL}/api/auth/kinde_callback`]
+        })
       }
     );
 
-  console.log("RESPONSE", response)
+    console.log("RESPONSE", response)
 
-  if (!response.ok) {
-    throw new Error(`Failed to add callback URL to Kinde: ${response.statusText}`);
+    if (!response.ok) {
+      throw new Error(`Failed to add callback URL to Kinde: ${response.statusText}`);
+    }
+
+    const responseData = await response.json();
+    console.log(
+      `SUCCESS: Callback URL added to Kinde: ${process.env.VERCEL_URL}/api/auth/kinde_callback`,
+      responseData
+    );
+  } catch (error) {
+    console.error("Failed to add callback URL to Kinde", error);
+    throw error;
   }
-
-  const responseData = await response.json();
-  console.log(
-    `SUCCESS: Callback URL added to Kinde: ${process.env.VERCEL_URL}/api/auth/kinde_callback`,
-    responseData
-  );
-} catch (error) {
-  console.error("Failed to add callback URL to Kinde", error);
-  throw error;
-}
 }
 
 (async () => {
