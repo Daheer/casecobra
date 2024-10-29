@@ -16,7 +16,7 @@ import { useToast } from "@/components/ui/toaster"
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs"
 import LoginModal from "@/components/LoginModal"
 
-const DesignPreview = async ({ configuration }: { configuration: Configuration }) => {
+const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
   const router = useRouter()
   const toast = useToast()
   const { id } = configuration
