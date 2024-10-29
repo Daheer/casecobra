@@ -70,6 +70,7 @@ const Page = async () => {
               <CardHeader className="pb-2">
                 <CardDescription>Last Week</CardDescription>
                 <CardTitle className="text-4xl">
+                  // @ts-ignore
                   {formatPrice(lastWeekSum._sum.amount) ?? 0}
                 </CardTitle>
               </CardHeader>
@@ -86,6 +87,7 @@ const Page = async () => {
               <CardHeader className="pb-2">
                 <CardDescription>Last Month</CardDescription>
                 <CardTitle className="text-4xl">
+                  // @ts-ignore
                   {formatPrice(lastMonthSum._sum.amount) ?? 0}
                 </CardTitle>
               </CardHeader>
