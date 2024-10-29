@@ -62,6 +62,12 @@ importers:
       framer-motion:
         specifier: ^11.2.6
         version: 11.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      kinde-auth-nextjs@2.2.2.4:
+        specifier: link:kinde-oss/kinde-auth-nextjs@2.2.2.4
+        version: link:kinde-oss/kinde-auth-nextjs@2.2.2.4
+      kinde-auth-nextjs@2.2.4:
+        specifier: link:kinde-oss/kinde-auth-nextjs@2.2.4
+        version: link:kinde-oss/kinde-auth-nextjs@2.2.4
       lucide-react:
         specifier: ^0.379.0
         version: 0.379.0(react@18.3.1)
