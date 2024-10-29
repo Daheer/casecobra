@@ -34,7 +34,7 @@ async function addLogoutUrlToKinde(token) {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
-          Accept: "application/json; charset=utf-8",
+          Accept: "application/json",
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
@@ -65,7 +65,7 @@ async function addCallbackUrlToKinde(token) {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
-          Accept: "application/json; charset=utf-8",
+          Accept: "application/json",
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
