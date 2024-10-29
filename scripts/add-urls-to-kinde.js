@@ -19,6 +19,7 @@ async function getAuthToken() {
     }
 
     const data = await response.json();
+    console.log("HOW FAR", data)
     return data.access_token;
   } catch (error) {
     console.error("Error getting auth token:", error);
@@ -91,6 +92,7 @@ async function addCallbackUrlToKinde(token) {
   if (process.env.VERCEL == 1) {
     try {
       const authToken = await getAuthToken();
+      console.log(authToken);
       await addCallbackUrlToKinde(authToken);
       await addLogoutUrlToKinde(authToken);
     } catch (error) {
