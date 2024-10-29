@@ -32,9 +32,7 @@ export async function POST(req: Request) {
       }
 
       const billingAddress = session.customer_details!.address
-      console.log("BILLING", billingAddress, "SHIPPING", session.shipping_details!)
-      console.log("ALLLL", session)
-      const shippingAddress = session.shipping_details!.address
+      const shippingAddress = session.shipping!.address
 
       await db.order.update({
         where: { id: orderId },
