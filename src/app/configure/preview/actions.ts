@@ -16,8 +16,6 @@ export const createCheckoutSession = async ({configId}: {configId: string}) => {
   const { getUser } = getKindeServerSession()
   const user = await getUser()
 
-  console.log("USER FOR ACTIONS", user)
-
   if (!user) { throw new Error("You need to be logged in")}
 
   const { finish, material } = configuration
