@@ -131,7 +131,7 @@ const DesignPreview = async ({ configuration }: { configuration: Configuration }
               </div>
             </div>
             <div className="mt-8 flex justify-end pb-12">
-              <Button onClick={handleCheckout} className="px-4 sm:px-6 lg:px-8">Check out <ArrowRight className="h-4 w-4 ml-1.5 inline" /></Button>
+              <Button onClick={() => handleCheckout()} className="px-4 sm:px-6 lg:px-8">Check out <ArrowRight className="h-4 w-4 ml-1.5 inline" /></Button>
             </div>
           </div>
         </div>
