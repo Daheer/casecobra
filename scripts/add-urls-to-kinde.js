@@ -19,7 +19,6 @@ async function getAuthToken() {
     }
 
     const data = await response.json();
-    console.log("HOW FAR", data)
     return data.access_token;
   } catch (error) {
     console.error("Error getting auth token:", error);
@@ -43,6 +42,8 @@ async function addLogoutUrlToKinde(token) {
         })
       }
     );
+
+    console.log("RESPONSE LOGOUT", response)
 
     if (!response.ok) {
       throw new Error(`Failed to add logout URL to Kinde: ${response.statusText}`);
@@ -73,6 +74,8 @@ async function addCallbackUrlToKinde(token) {
       }
     );
 
+    console.log("RESPONSE", response)
+
     if (!response.ok) {
       throw new Error(`Failed to add callback URL to Kinde: ${response.statusText}`);
     }
@@ -92,7 +95,6 @@ async function addCallbackUrlToKinde(token) {
   if (process.env.VERCEL == 1) {
     try {
       const authToken = await getAuthToken();
-      console.log(authToken);
       await addCallbackUrlToKinde(authToken);
       await addLogoutUrlToKinde(authToken);
     } catch (error) {
